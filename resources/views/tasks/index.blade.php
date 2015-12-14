@@ -14,8 +14,10 @@
 
 @section('content')
 
-  
+
     <h2>All Tasks</h2><br><br>
+
+    <a href="/tasks/add">Add Task</a>
 
     @foreach ($tasks as $task)
       <div>
