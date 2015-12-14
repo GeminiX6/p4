@@ -63,6 +63,12 @@ class TasksController extends Controller {
 
         $task = \App\Task::find($id);
 
+        if(is_null($task)) {
+
+          \Session::flash('flash_message', 'Task not found');
+          return redirect('/tasks');
+        }
+
         return view('editTask.index')->with('task', $task);
     }
 
@@ -88,7 +94,7 @@ class TasksController extends Controller {
 
         \Session::flash('flash_message', 'Successfully updated task!');
 
-        return redirect ('/tasks');
+        return redirect('/tasks');
     }
 
     /**

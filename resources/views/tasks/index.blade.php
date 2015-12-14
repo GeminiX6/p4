@@ -22,8 +22,8 @@
     @foreach ($tasks as $task)
       <div>
           <h3>{{ $task->description }}</h3>
-          <br>
           Complete by: {{ $task->due }}
+          <a href='/tasks/edit/{{$task->id}}'>Edit</a>
        </div>
     @endforeach
 

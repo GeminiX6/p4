@@ -16,6 +16,8 @@
 
     <h2>Delete Task</h2><br><br>
 
+    <a href="/tasks">Back To Tasks</a>
+
 
 
 

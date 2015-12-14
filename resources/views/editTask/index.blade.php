@@ -16,6 +16,8 @@
 
     <h2>Edit Task</h2><br><br>
 
+    <a href="/tasks">Back To Tasks</a>
+
     @if(count($errors) > 0)
       <ul>
         @foreach ($errors->all() as $error)
