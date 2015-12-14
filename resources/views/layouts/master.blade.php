@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>
-        {{-- Yield the title if it exists, otherwise default to 'Developers Best Friend' --}}
-        @yield('title','Developers Best Friend')
+        {{-- Yield the title if it exists, otherwise default to 'Task Manager' --}}
+        @yield('title','Task Manager')
     </title>
 
     <meta charset='utf-8'>
@@ -19,11 +19,18 @@
 </head>
 <body>
 
+    @if(\Session::has('flash_message'))
+    <div class='flash_message'>
+        {{ \Session::get('flash_message')}}
+    </div>
+    @endif
+
     <header>
         <img
-        src='image/Megaman_stand.png'
+        src='/image/Megaman_stand.png'
         style='width:150px'
         alt='Task Manager'>
+        @yield('header')
     </header>
 
     <section>
