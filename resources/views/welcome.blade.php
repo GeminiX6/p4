@@ -20,8 +20,10 @@ such as a page specific styesheets.
 
     <h2>Task Manager</h2><br><br>
 
-    <a href='/login'>Login</a><br>
-    <a href='/register'>Register</a>
+    <ul>
+        <li><a href='/login'>Login</a></li>
+        <li><a href='/register'>Register</a></li>
+    </ul>
 
 
 

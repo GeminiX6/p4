@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <p><a href="/">Back To Home</a><br></p>
+    <li><a href="/">Back To Home</a></li>
     <p>Need an account? <a href='/register'>Register a new account</a></p>
 
     <h1>Login</h1>

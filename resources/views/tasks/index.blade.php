@@ -14,10 +14,11 @@
 
 @section('content')
 
-    <a href="/logout">Logout</a>
+    <li><a href="/logout">Logout</a></li>
+
     <h2>All Tasks</h2><br><br>
 
-    <a href="/tasks/add">Add Task</a>
+    <li><a href="/tasks/add">Add Task</a></li>
 
     @foreach ($tasks as $task)
       <div>

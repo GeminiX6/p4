@@ -11,6 +11,16 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+      $user = \App\User::firstOrCreate(['email' => 'jill@harvard.edu']);
+      $user->name = 'Jill';
+      $user->email = 'jill@harvard.edu';
+      $user->password = \Hash::make('helloworld');
+      $user->save();
+
+      $user = \App\User::firstOrCreate(['email' => 'jamal@harvard.edu']);
+      $user->name = 'Jamal';
+      $user->email = 'jamal@harvard.edu';
+      $user->password = \Hash::make('helloworld');
+      $user->save();
     }
 }

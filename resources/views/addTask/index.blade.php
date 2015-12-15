@@ -14,10 +14,9 @@
 
 @section('content')
 
+    <li><a href="/tasks">Back To Tasks</a></li>
 
     <h2>Add Task</h2><br><br>
-
-    <a href="/tasks">Back To Tasks</a>
 
     @if(count($errors) > 0)
       <ul>

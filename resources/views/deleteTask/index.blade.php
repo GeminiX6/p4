@@ -14,9 +14,10 @@
 
 @section('content')
 
-    <h2>Delete Task</h2><br><br>
 
-    <a href="/tasks">Back To Tasks</a>
+    <li><a href="/tasks">Back To Tasks</a></li>
+
+    <h2>Delete Task</h2><br><br>
 
     @if(count($errors) > 0)
       <ul>
@@ -40,7 +41,7 @@
       <input type='hidden' name='_token' value='{{csrf_token()}}'>
 
       <input type='hidden' name='id' value='{{ $task->id }}'>
-      
+
         <fieldset>
           <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
