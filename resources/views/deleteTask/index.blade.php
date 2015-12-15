@@ -2,7 +2,7 @@
 
 
 @section('title')
-    Delete Task
+    Edit Task
 @stop
 
 
@@ -18,6 +18,37 @@
 
     <a href="/tasks">Back To Tasks</a>
 
+    @if(count($errors) > 0)
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    @endif
+
+    <div>
+
+        Are you sure you want to delete this task?
+
+        <h3>{{ $task->description }}</h3>
+        Currently due: {{ $task->due }}
+
+    </div>
+
+    <form method='POST' action='/tasks/delete' class="form-horizontal">
+
+      <input type='hidden' name='_token' value='{{csrf_token()}}'>
+
+      <input type='hidden' name='id' value='{{ $task->id }}'>
+      
+        <fieldset>
+          <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+              <button type="submit" class="btn btn-primary">Delete Task</button>
+            </div>
+          </div>
+        </fieldset>
+    </form>
 
 
 

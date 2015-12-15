@@ -85,7 +85,7 @@ class TasksController extends Controller {
             ]
           );
 
-        $task = \App\Task::find($request->$id);
+        $task = \App\Task::find($request->id);
 
         $task->description = $request->description;
         $task->due = Carbon::now()->addDay($request->due);
@@ -100,15 +100,32 @@ class TasksController extends Controller {
     /**
      * Responds to requests to GET /tasks/edit
      */
-    public function getDeleteTask() {
-        return view('deleteTask.index');
+    public function getDeleteTask($id = null) {
+
+      $task = \App\Task::find($id);
+
+      if(is_null($task)) {
+
+        \Session::flash('flash_message', 'Task not found');
+        return redirect('/tasks');
+      }
+
+      return view('deleteTask.index')->with('task', $task);
+
     }
 
     /**
      * Responds to requests to GET /tasks/edit
      */
-    public function postDeleteTask() {
-        return view('deleteTask.postindex');
+    public function postDeleteTask(Request $request) {
+
+        $task = \App\Task::find($request->id);
+
+        $task->delete();
+
+        \Session::flash('flash_message', 'Successfully deleted task!');
+
+        return redirect('/tasks');
     }
 
 

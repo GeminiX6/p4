@@ -17,13 +17,6 @@ such as a page specific styesheets.
 
 
 @section('content')
-
-    <header>
-      <img
-      src='image/Megaman_stand.png'
-      style='width:150px'
-      alt='Task Manager'>
-    </header>
     
     <h2>Task Manager</h2><br><br>
 

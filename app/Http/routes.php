@@ -24,7 +24,7 @@ Route::post('/tasks/add', 'TasksController@postAddTask');
 Route::get('/tasks/edit/{id?}', 'TasksController@getEditTask');
 Route::post('/tasks/edit', 'TasksController@postEditTask');
 
-Route::get('/tasks/delete', 'TasksController@getDeleteTask');
+Route::get('/tasks/delete/{id?}', 'TasksController@getDeleteTask');
 Route::post('/tasks/delete', 'TasksController@postDeleteTask');
 
 

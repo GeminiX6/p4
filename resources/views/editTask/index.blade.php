@@ -26,7 +26,7 @@
       </ul>
     @endif
 
-    <form method='POST' action='/tasks/edit/' class="form-horizontal">
+    <form method='POST' action='/tasks/edit' class="form-horizontal">
 
         <input type='hidden' name='_token' value='{{csrf_token()}}'>
 

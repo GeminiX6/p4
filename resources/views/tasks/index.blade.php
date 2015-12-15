@@ -24,6 +24,7 @@
           <h3>{{ $task->description }}</h3>
           Complete by: {{ $task->due }}
           <a href='/tasks/edit/{{$task->id}}'>Edit</a>
+          <a href='/tasks/delete/{{$task->id}}'>Delete</a>
        </div>
     @endforeach
 
