@@ -17,11 +17,11 @@ such as a page specific styesheets.
 
 
 @section('content')
-    
+
     <h2>Task Manager</h2><br><br>
 
-    Login
-    Register
+    <a href='/login'>Login</a><br>
+    <a href='/register'>Register</a>
 
 
 

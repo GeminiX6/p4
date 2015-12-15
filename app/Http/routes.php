@@ -18,14 +18,51 @@ Route::get('/', function () {
 
 Route::get('/tasks', 'TasksController@getTasks');
 
+#Show form to add a new task
 Route::get('/tasks/add', 'TasksController@getAddTask');
+#Process adding the new task
 Route::post('/tasks/add', 'TasksController@postAddTask');
 
+#Show form to edit a specific task
 Route::get('/tasks/edit/{id?}', 'TasksController@getEditTask');
+#Process the edits to the task
 Route::post('/tasks/edit', 'TasksController@postEditTask');
 
+#Show task to delete
 Route::get('/tasks/delete/{id?}', 'TasksController@getDeleteTask');
+#Process task deletion
 Route::post('/tasks/delete', 'TasksController@postDeleteTask');
+
+# Show login form
+Route::get('/login', 'Auth\AuthController@getLogin');
+
+# Process login form
+Route::post('/login', 'Auth\AuthController@postLogin');
+
+# Process logout
+Route::get('/logout', 'Auth\AuthController@getLogout');
+
+# Show registration form
+Route::get('/register', 'Auth\AuthController@getRegister');
+
+# Process registration form
+Route::post('/register', 'Auth\AuthController@postRegister');
+
+Route::get('/confirm-login-worked', function() {
+
+    # You may access the authenticated user via the Auth facade
+    $user = Auth::user();
+
+    if($user) {
+        echo 'You are logged in.';
+        dump($user->toArray());
+    } else {
+        echo 'You are not logged in.';
+    }
+
+    return;
+
+});
 
 
 Route::get('/debug', function() {

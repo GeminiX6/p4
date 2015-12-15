@@ -25,6 +25,7 @@ class CreateTasksTable extends Migration
            # The rest of the fields...
            $table->text('description');
            $table->timestamp('due');
+           $table->boolean('completed');
 
        });
     }

@@ -16,6 +16,7 @@ class TasksTableSeeder extends Seeder
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
         'description' => 'Do homework',
         'due' => Carbon\Carbon::now()->addWeek(),
+        'completed' => false,
         ]);
 
         DB::table('tasks')->insert([
@@ -23,6 +24,7 @@ class TasksTableSeeder extends Seeder
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
         'description' => 'Wash laundry',
         'due' => Carbon\Carbon::now()->addDay(),
+        'completed' => false,
         ]);
 
         DB::table('tasks')->insert([
@@ -30,6 +32,31 @@ class TasksTableSeeder extends Seeder
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
         'description' => 'Clean bathroom',
         'due' => Carbon\Carbon::now()->addDay(),
+        'completed' => false,
+        ]);
+
+        DB::table('tasks')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'description' => 'Update project',
+        'due' => Carbon\Carbon::now()->addWeek(),
+        'completed' => false,
+        ]);
+
+        DB::table('tasks')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'description' => 'Call parents',
+        'due' => Carbon\Carbon::now()->addDay(),
+        'completed' => false,
+        ]);
+
+        DB::table('tasks')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'description' => 'Fill out timecard',
+        'due' => Carbon\Carbon::now()->addDay(),
+        'completed' => false,
         ]);
     }
 }
