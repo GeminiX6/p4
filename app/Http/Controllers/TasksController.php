@@ -19,12 +19,10 @@ class TasksController extends Controller {
     public function getTasks() {
 
         $user = \Auth::user();
-        $tasks = \App\Task::with('users')->orderBy('due','ASC')->get();
+        $tasks = \App\User::where('id','=',$user->id)->with('tasks')->get();
 
-        foreach($tasks as $task){
-        }
 
-        return view('tasks.index')->with('tasks', $tasks);
+        return view('tasks.index')->with('tasks', $tasks[0]->tasks);
     }
 
     /**
