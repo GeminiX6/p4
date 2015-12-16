@@ -18,9 +18,13 @@ class TasksController extends Controller {
     */
     public function getTasks() {
 
-        $task = \App\Task::orderBy('due','ASC')->get();
+        $user = \Auth::user();
+        $tasks = \App\Task::with('users')->orderBy('due','ASC')->get();
 
-        return view('tasks.index')->with('tasks', $task);
+        foreach($tasks as $task){
+        }
+
+        return view('tasks.index')->with('tasks', $tasks);
     }
 
     /**
@@ -46,10 +50,14 @@ class TasksController extends Controller {
 
         $newtask = new \App\Task();
 
+        $user = \Auth::user();
+
         $newtask->description = $request->description;
-        $newtask->due = Carbon::now()->addDay($request->due);
+        $newtask->due = Carbon::now()->addDays($request->due);
 
         $newtask->save();
+
+        $user->tasks()->save($newtask);
 
         \Session::flash('flash_message', 'Successfully added new task!');
 
@@ -121,9 +129,46 @@ class TasksController extends Controller {
 
         $task = \App\Task::find($request->id);
 
+          if($task->users()) {
+          $task->users()->detach();
+          }
+
         $task->delete();
 
         \Session::flash('flash_message', 'Successfully deleted task!');
+
+        return redirect('/tasks');
+    }
+
+    /**
+     * Responds to requests to GET /tasks/complete
+     */
+    public function getCompleteTask($id = null) {
+
+      $task = \App\Task::find($id);
+
+      if(is_null($task)) {
+
+        \Session::flash('flash_message', 'Task not found');
+        return redirect('/tasks');
+      }
+
+      return view('completeTask.index')->with('task', $task);
+
+    }
+
+    /**
+     * Responds to requests to GET /tasks/edit
+     */
+    public function postCompleteTask(Request $request) {
+
+        $task = \App\Task::find($request->id);
+
+        $task->completed = true;
+
+        $task->save();
+
+        \Session::flash('flash_message', 'Successfully completed task!');
 
         return redirect('/tasks');
     }

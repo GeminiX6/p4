@@ -17,7 +17,7 @@
 
     <li><a href="/tasks">Back To Tasks</a></li>
 
-    <h2>Delete Task</h2><br><br>
+    <h2>Complete Task</h2><br><br>
 
     @if(count($errors) > 0)
       <ul>
@@ -29,7 +29,7 @@
 
     <div>
 
-        Are you sure you want to delete this task?
+        Are you sure you want to complete this task?
 
         <h3>{{ $task->description }}</h3>
         Created on: {{ $task->created_at->toFormattedDateString()}}
@@ -37,7 +37,7 @@
 
     </div>
 
-    <form method='POST' action='/tasks/delete' class="form-horizontal">
+    <form method='POST' action='/tasks/complete' class="form-horizontal">
 
       <input type='hidden' name='_token' value='{{csrf_token()}}'>
 
@@ -46,7 +46,7 @@
         <fieldset>
           <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
-              <button type="submit" class="btn btn-primary">Delete Task</button>
+              <button type="submit" class="btn btn-primary">Complete Task</button>
             </div>
           </div>
         </fieldset>

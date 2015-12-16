@@ -21,8 +21,15 @@ such as a page specific styesheets.
     <h2>Task Manager</h2><br><br>
 
     <ul>
-        <li><a href='/login'>Login</a></li>
-        <li><a href='/register'>Register</a></li>
+      @if(Auth::check())
+            <li><a href='/'>Home</a></li>
+            <li><a href='/tasks'>Go To Tasks</a></li>
+            <li><a href='/logout'>Log Out</a></li>
+        @else
+            <li><a href='/'>Home</a></li>
+            <li><a href='/login'>Login</a></li>
+            <li><a href='/register'>Register</a></li>
+        @endif
     </ul>
 
 

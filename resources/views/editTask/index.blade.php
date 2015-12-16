@@ -15,7 +15,7 @@
 @section('content')
 
     <li><a href="/tasks">Back To Tasks</a></li>
-    
+
     <h2>Edit Task</h2><br><br>
 
     @if(count($errors) > 0)
@@ -45,6 +45,7 @@
           </div>
         </fieldset>
 
+        Created on: {{ $task->created_at->toFormattedDateString()}}
         Currently due: {{ $task->due }}
 
         <fieldset>

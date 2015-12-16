@@ -25,3 +25,15 @@ footer{
     font-weight: bold;
     color: white;
 }
+
+.completed_task {
+  font-size: 14;
+  font-weight: lighter;
+  color: grey;
+}
+
+.noncompleted_task {
+  font-size: 14;
+  font-weight: bold;
+  color: white;
+}
