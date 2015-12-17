@@ -16,7 +16,7 @@
 
     <li><a href="/logout">Logout</a></li>
 
-    <h2>Uncompleted Tasks</h2><br><br>
+    <h2>Completed Tasks</h2><br><br>
 
     <li><a href="/tasks">Back To All Tasks</a></li>
     <li><a href="/tasks/uncompleted">See Uncompleted Tasks</a></li>
@@ -33,7 +33,7 @@
           Completed on: {{ $task->updated_at->toFormattedDateString() }}<br>
 
         </div>
-        
+
         @endif
 
     @endforeach
