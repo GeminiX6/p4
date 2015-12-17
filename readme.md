@@ -8,7 +8,7 @@ Task Manager
 Project allows users to register an account, set up tasks, adjust the date they need to be completed, and then complete them once the task is done. They can also delete a task if they decide to.
 
 ## Demo
-
+<http://screencast.com/t/llxhfr9q>
 
 ## Details for TA
 Both Jill and Jamal have pre-generated accounts on the project.
