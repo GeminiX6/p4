@@ -34,7 +34,7 @@ such as a page specific styesheets.
 
     <div>
 
-      <p>A website for creating and tracking tasks.</p>
+      <p>A website for creating and tracking tasks. Register a new account to add tasks or log in with an existing account to update or complete tasks you have already set for yourself!</p>
 
     </div>
 
