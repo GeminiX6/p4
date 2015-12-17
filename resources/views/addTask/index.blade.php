@@ -38,7 +38,7 @@
                       type='text'
                       id='description'
                       name='description'
-                      value='{{ old('description', 'Update project') }}'
+                      value='{{ old('description') }}'
                   >
           </div>
         </fieldset>
@@ -51,7 +51,7 @@
                       class='form-control'
                       id='due'
                       name='due'
-                      value='{{ old('due', '1') }}'
+                      value='{{ old('due') }}'
                   >
           </div>
         </fieldset>

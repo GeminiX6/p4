@@ -32,6 +32,12 @@ such as a page specific styesheets.
         @endif
     </ul>
 
+    <div>
+
+      <p>A website for creating and tracking tasks.</p>
+
+    </div>
+
 
 
 @stop

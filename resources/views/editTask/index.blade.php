@@ -45,7 +45,7 @@
           </div>
         </fieldset>
 
-        Created on: {{ $task->created_at->toFormattedDateString()}}
+        Created on: {{ $task->created_at->toFormattedDateString()}}<br>
         Currently due: {{ $task->due }}
 
         <fieldset>
@@ -56,7 +56,7 @@
                       class='form-control'
                       id='due'
                       name='due'
-                      value='{{ old('due','1') }}'
+                      value='{{ old('due') }}'
                   >
           </div>
         </fieldset>

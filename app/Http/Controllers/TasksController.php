@@ -25,6 +25,24 @@ class TasksController extends Controller {
         return view('tasks.index')->with('tasks', $tasks[0]->tasks);
     }
 
+    public function getCompletedTasks() {
+
+        $user = \Auth::user();
+        $tasks = \App\User::where('id','=',$user->id)->with('tasks')->get();
+
+
+        return view('completedTasks.index')->with('tasks', $tasks[0]->tasks);
+    }
+
+    public function getUncompletedTasks() {
+
+        $user = \Auth::user();
+        $tasks = \App\User::where('id','=',$user->id)->with('tasks')->get();
+
+
+        return view('uncompletedTasks.index')->with('tasks', $tasks[0]->tasks);
+    }
+
     /**
      * Responds to requests to GET /tasks/add
      */
@@ -87,11 +105,12 @@ class TasksController extends Controller {
             $request,
             [
               'description' => 'required|min:4',
-              'due' => 'required|integer|min:1'
+              'due' => 'required|integer'
             ]
           );
 
         $task = \App\Task::find($request->id);
+
 
         $task->description = $request->description;
         $task->due = Carbon::now()->addDay($request->due);

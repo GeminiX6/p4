@@ -16,21 +16,14 @@
 
     <li><a href="/logout">Logout</a></li>
 
-    <h2>All Tasks</h2><br><br>
+    <h2>Uncompleted Tasks</h2><br><br>
 
+    <li><a href="/tasks">Back To All Tasks</a></li>
     <li><a href="/tasks/completed">See Completed Tasks</a></li>
-    <li><a href="/tasks/uncompleted">See Uncompleted Tasks</a></li>
     <li><a href="/tasks/add">Add A New Task</a></li>
 
     @foreach ($tasks as $task)
-        @if($task->completed)
-          <div class='completed_task'>
-            <h3>{{ $task->description }}</h3>
-            Created on: {{ $task->created_at->toFormattedDateString() }}<br>
-            Completed on: {{ $task->updated_at->toFormattedDateString() }}<br>
-          </div>
-
-        @else
+        @if(!$task->completed)
           <div class='noncompleted_task'>
             <h3>{{ $task->description }}</h3>
             <a href='/tasks/complete/{{$task->id}}'>Complete This Task</a><br>

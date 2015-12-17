@@ -18,6 +18,10 @@ Route::get('/', function () {
 Route::group(['middleware' => 'auth'], function () {
     #Show tasks for logged in user
     Route::get('/tasks', 'TasksController@getTasks');
+    #Show completed tasks for logged in user
+    Route::get('/tasks/completed', 'TasksController@getCompletedTasks');
+    #Show completed tasks for logged in user
+    Route::get('/tasks/uncompleted', 'TasksController@getUncompletedTasks');
     #Show form to add a new task
     Route::get('/tasks/add', 'TasksController@getAddTask');
     #Process adding the new task
