@@ -32,7 +32,7 @@
         Are you sure you want to complete this task?
 
         <h3>{{ $task->description }}</h3>
-        Created on: {{ $task->created_at->toFormattedDateString()}}
+        Created on: {{ $task->created_at->toFormattedDateString()}}<br>
         Currently due: {{ $task->due }}
 
     </div>
