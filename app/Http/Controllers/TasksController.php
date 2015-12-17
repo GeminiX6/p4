@@ -101,13 +101,13 @@ class TasksController extends Controller {
      */
     public function postEditTask(Request $request) {
 
-          $this->validate(
-            $request,
-            [
-              'description' => 'required|min:4',
-              'due' => 'required|integer'
-            ]
-          );
+      $this->validate(
+          $request,
+          [
+            'description' => 'required|min:4',
+            'due' => 'required|integer'
+          ]
+        );
 
         $task = \App\Task::find($request->id);
 

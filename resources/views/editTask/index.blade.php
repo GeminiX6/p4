@@ -41,7 +41,7 @@
                       id='description'
                       name='description'
                       value='{{ $task->description }}'
-                  >
+              >
           </div>
         </fieldset>
 

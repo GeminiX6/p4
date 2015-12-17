@@ -30,7 +30,7 @@ class TaskUserTableSeeder extends Seeder
 
               # Connect this task to this user
               $user->tasks()->save($task);
-              }
+          }
 
       }
     }

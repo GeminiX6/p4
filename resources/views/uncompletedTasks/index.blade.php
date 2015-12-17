@@ -24,13 +24,17 @@
 
     @foreach ($tasks as $task)
         @if(!$task->completed)
+
           <div class='noncompleted_task'>
+
             <h3>{{ $task->description }}</h3>
             <a href='/tasks/complete/{{$task->id}}'>Complete This Task</a><br>
             Created on: {{ $task->created_at->toFormattedDateString() }}<br>
             Complete by: {{ $task->due }}<br>
             <a href='/tasks/edit/{{$task->id}}'>Edit</a> | <a href='/tasks/delete/{{$task->id}}'>Delete</a>
+
           </div>
+          
         @endif
 
     @endforeach

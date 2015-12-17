@@ -23,12 +23,17 @@
     <li><a href="/tasks/add">Add A New Task</a></li>
 
     @foreach ($tasks as $task)
+
         @if($task->completed)
+
         <div class='completed_task'>
+
           <h3>{{ $task->description }}</h3>
           Created on: {{ $task->created_at->toFormattedDateString() }}<br>
           Completed on: {{ $task->updated_at->toFormattedDateString() }}<br>
+
         </div>
+        
         @endif
 
     @endforeach

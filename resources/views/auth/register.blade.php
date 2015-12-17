@@ -3,7 +3,7 @@
 @section('content')
 
     <li><a href="/">Back To Home</a></li>
-    <p>If you aleady have an account <a href='/login'>login here</a></p>
+    <p>If you already have an account <a href='/login'>login here</a></p>
 
     <h1>Register</h1>
 

@@ -26,11 +26,13 @@
     @endif
 
     <header>
+
         <img
         src='/image/Megaman_stand.png'
         style='width:150px'
         alt='Task Manager'>
         @yield('header')
+        
     </header>
 
     <section>
